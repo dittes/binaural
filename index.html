@@ -1,0 +1,223 @@
+<!doctype html>
+<!--
+  ~ /*******************************************************************************
+  ~  jquery.mb.components
+  ~  file: demo_videoList.html
+  ~
+  ~  Copyright (c) 2001-2013. Matteo Bicocchi (Pupunzi);
+  ~  Open lab srl, Firenze - Italy
+  ~  email: matteo@open-lab.com
+  ~  site: 	http://pupunzi.com
+  ~  blog:	http://pupunzi.open-lab.com
+  ~ 	http://open-lab.com
+  ~
+  ~  Licences: MIT, GPL
+  ~  http://www.opensource.org/licenses/mit-license.php
+  ~  http://www.gnu.org/licenses/gpl.html
+  ~
+  ~  last modified: 02/10/13 22.42
+  ~  ******************************************************************************/
+  -->
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Binaural relaxing ASMR sounds - brain orgasm</title>
+    <link href="css/YTPlayer.css" media="all" rel="stylesheet" type="text/css">
+
+	<meta property="og:title" content="Binaural brain orgasms"/>
+	<meta property="og:type" content="cause"/>
+	<meta property="og:url" content="http://binaural.co/"/>
+	<meta property="og:image" content="http://binaural.co/binaural.jpg"/>
+	<meta property="og:site_name" content="Binaural brain orgasms"/>
+	<meta property="fb:admins" content="500108777"/>
+	<meta property="og:description" content="Take a moment to relax with these stimulating binaural ASMR sounds. CAUTION: This website might cause you brain orgasms!"/>
+
+	<meta name="description" content="Take a moment to relax with these stimulating binaural ASMR sounds. CAUTION: This website might cause you brain orgasms!">
+
+    <link href='http://fonts.googleapis.com/css?family=Lekton' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+
+        body{
+            background: #333;
+            margin:0;
+            font:normal 12px/14px Arial, sans-serif;
+        }
+        
+        a {
+	        color: #ccc;
+        }
+
+        #wrapper {
+            color:#ccc;
+            font:normal 14px/16px Arial, sans-serif;
+            text-align:left;
+            padding-top:150px;
+            margin-left:20px;
+        }
+        
+        .console {
+	        background-color:rgba(0,0,0,0.5);
+            font:normal 12px/14px;
+	        width: 200px;
+	        padding: 10px;
+        }
+
+        .movie{
+            display:none;
+        }
+
+        .dida{
+            position:fixed;
+            bottom:0;
+            color:white;
+            padding:10px;
+        }
+
+        button{
+            display:block;
+            background:transparent;
+            border:none;
+            color:#ccc;
+            font:normal 12px/13px Arial, sans-serif;
+            cursor:pointer;
+        }
+
+        button.command{
+            display:inline-block;
+        }
+
+        button:hover, button.sel{
+            color: #ffcc00;
+        }
+
+    </style>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script type="text/javascript" src="inc/jquery.mb.YTPlayer.js"></script>
+    <script type="text/javascript">
+
+        jQuery(function(){
+            if (self.location.href == top.location.href){
+                var logo=$("<a href='http://binaural.co' style='position:absolute;top:30px;z-index:1000'><img id='logo' border='0' src='http://binaural.co/logo.png'></a>");
+                $("#wrapper").prepend(logo);
+                $("#logo").fadeIn();
+            }
+
+	        var videos = [
+	        	// a fake URL to test
+				{videoURL:"xxxxxxxxx",containment:'body',autoPlay:true, mute:false, startAt:0,opacity:1, loop:false},
+	            {videoURL: "cmx7KRNhD3k	",containment:'body',autoPlay:true, mute:false, startAt:0,opacity:1, loop:false, addRaster:false, quality:"auto"},
+	            {videoURL: "B3pNwmtg078&t=6",containment:'body',autoPlay:true, mute:false, startAt:0,opacity:1, loop:false, addRaster:false, quality:"auto"},
+	            {videoURL: "2g9e2ner9sE&t=6",containment:'body',autoPlay:true, mute:false, startAt:0,opacity:1, loop:false, addRaster:false, quality:"auto"},
+	            {videoURL:"tO9JGISzb9Q",containment:'body',autoPlay:true, mute:false, startAt:0,opacity:1, loop:false, addRaster:false, quality:"auto"},
+	            {videoURL: "w_P723zom9w",containment:'body',autoPlay:true, mute:false, startAt:0,opacity:1, loop:false, addRaster:false, quality:"auto"},
+	            {videoURL: "5Eq1cs8GS1Y",containment:'body',autoPlay:true, mute:false, startAt:0,opacity:1, loop:false, addRaster:false, quality:"auto"},
+	            {videoURL: "Pclezy71o9M",containment:'body',autoPlay:true, mute:false, startAt:0,opacity:1, loop:false, addRaster:false, quality:"auto"},
+	            {videoURL: "JistFIZjNDo",containment:'body',autoPlay:true, mute:false, startAt:0,opacity:1, loop:false, addRaster:false, quality:"auto"},
+	            {videoURL: "5Eq1cs8GS1Y",containment:'body',autoPlay:true, mute:false, startAt:0,opacity:1, loop:false, addRaster:false, quality:"auto"},
+	            {videoURL: "8SQBCp0orvI",containment:'body',autoPlay:true, mute:false, startAt:0,opacity:1, loop:false, addRaster:false, quality:"auto"},
+	            {videoURL: "v74ceeUarG8",containment:'body',autoPlay:true, mute:false, startAt:0,opacity:1, loop:false, addRaster:false, quality:"auto"},
+	            {videoURL: "d0Zz6z5GaVE",containment:'body',autoPlay:true, mute:false, startAt:0,opacity:1, loop:false, addRaster:false, quality:"auto"},
+	            {videoURL: "nuJDv4ahiec",containment:'body',autoPlay:true, mute:false, startAt:0,opacity:1, loop:false, addRaster:false, quality:"auto"},
+	            {videoURL: "WWMNcb3WQJY",containment:'body',autoPlay:true, mute:false, startAt:0,opacity:1, loop:false, addRaster:false, quality:"auto"},
+	            {videoURL: "G2YlbQMIr1s",containment:'body',autoPlay:true, mute:false, startAt:0,opacity:1, loop:false, addRaster:false, quality:"auto"},
+	            {videoURL: "aD59cS_puWA",containment:'body',autoPlay:true, mute:false, startAt:0,opacity:1, loop:false, addRaster:false, quality:"auto"},
+	            {videoURL: "sKGIe_WR0O4&t=3",containment:'body',autoPlay:true, mute:false, startAt:0,opacity:1, loop:false, addRaster:false, quality:"auto"},
+	            {videoURL: "RVpfHgC3ye0",containment:'body',autoPlay:true, mute:false, startAt:0,opacity:1, loop:false, addRaster:false, quality:"auto"},
+	            {videoURL: "Rl5-tHdP4SE",containment:'body',autoPlay:true, mute:false, startAt:0,opacity:1, loop:false, addRaster:false, quality:"auto"},
+	            {videoURL: "W4sB6PuxCk4",containment:'body',autoPlay:true, mute:false, startAt:0,opacity:1, loop:false, addRaster:false, quality:"auto"},
+	            {videoURL: "hkZerYEOWSg",containment:'body',autoPlay:true, mute:false, startAt:0,opacity:1, loop:false, addRaster:false, quality:"auto"},
+	            {videoURL: "-ebATPuveog",containment:'body',autoPlay:true, mute:false, startAt:0,opacity:1, loop:false, addRaster:false, quality:"auto"},
+	            {videoURL: "OLmReBdRWt0",containment:'body',autoPlay:true, mute:false, startAt:0,opacity:1, loop:false, addRaster:false, quality:"auto"},
+	            {videoURL: "CsyBfYl98CY",containment:'body',autoPlay:true, mute:false, startAt:0,opacity:1, loop:false, addRaster:false, quality:"auto"},
+	            {videoURL: "xdg4QiAklSE",containment:'body',autoPlay:true, mute:false, startAt:0,opacity:1, loop:false, addRaster:false, quality:"auto"},
+	            {videoURL: "jC8ya9OIotE",containment:'body',autoPlay:true, mute:false, startAt:0,opacity:1, loop:false, addRaster:false, quality:"auto"},
+	            {videoURL: "9izRZYEAWF0",containment:'body',autoPlay:true, mute:false, startAt:0,opacity:1, loop:false, addRaster:false, quality:"auto"},
+	            {videoURL: "ir2Kdf5_2Xo",containment:'body',autoPlay:true, mute:false, startAt:0,opacity:1, loop:false, addRaster:false, quality:"auto"},
+	            {videoURL: "rOGzMJZFODM",containment:'body',autoPlay:true, mute:false, startAt:0,opacity:1, loop:false, addRaster:false, quality:"auto"},
+	            {videoURL: "p7_3iUN_QNQ",containment:'body',autoPlay:true, mute:false, startAt:0,opacity:1, loop:false, addRaster:false, quality:"auto"},
+	            {videoURL: "z47ZXZG-45g",containment:'body',autoPlay:true, mute:false, startAt:0,opacity:1, loop:false, addRaster:false, quality:"auto"},
+	            {videoURL: "n3GAUUg0vaU",containment:'body',autoPlay:true, mute:false, startAt:0,opacity:1, loop:false, addRaster:false, quality:"auto"},
+	            {videoURL: "IsNE6qHUBOw",containment:'body',autoPlay:true, mute:false, startAt:0,opacity:1, loop:false, addRaster:false, quality:"auto"},
+	            {videoURL: "bySsyFZJhSA",containment:'body',autoPlay:true, mute:false, startAt:0,opacity:1, loop:false, addRaster:false, quality:"auto"},
+	            {videoURL: "T-cLOZAuHt4",containment:'body',autoPlay:true, mute:false, startAt:0,opacity:1, loop:false, addRaster:false, quality:"auto"},
+	            {videoURL: "AiQRP5TTyJc",containment:'body',autoPlay:true, mute:false, startAt:0,opacity:1, loop:false, addRaster:false, quality:"auto"},
+	            {videoURL: "JistFIZjNDo",containment:'body',autoPlay:true, mute:false, startAt:0,opacity:1, loop:false, addRaster:false, quality:"auto"},
+	            {videoURL: "p5ITQ8r3AnU",containment:'body',autoPlay:true, mute:false, startAt:0,opacity:1, loop:false, addRaster:false, quality:"auto"},
+	            {videoURL: "JistFIZjNDo&t=7",containment:'body',autoPlay:true, mute:false, startAt:0,opacity:1, loop:false, addRaster:false, quality:"auto"}
+	        ];
+	
+	        jQuery("#myPlayerID").YTPlaylist(videos, true, function(video){
+	            if(video.videoData){
+	                jQuery("#videoID").html(video.videoData.id);
+	                jQuery("#videoTitle").html(video.videoData.title);
+	                jQuery("#videoDuration").html(jQuery.mbYTPlayer.formatTime(video.videoData.duration));
+	                jQuery("#viewCount").html(video.videoData.viewCount);
+	            }
+	        });
+	    });
+
+    </script>
+
+</head>
+<body>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div id="wrapper">
+    <div class="console">
+
+Welcome to Binaural.co!<br /><br />
+Here you will find super stimulating <a href="http://en.wikipedia.org/wiki/Binaural_recording" target="_blank">binaural</a> <a href="http://en.wikipedia.org/wiki/Autonomous_sensory_meridian_response" target="_blank">ASMR</a> sounds that might cause you a tingling feeling in your brain or even some brain orgasms... <br /><br />
+Wear headphones and enjoy! <br /><br />
+
+<!--        <p style="color:#ccc"> Title:<br /> <span id="videoTitle"></span> </p> -->
+
+<!--    <button style="color:#ccc; font-size: 22px" onclick="jQuery('#myPlayerID').playPrev()">&#9754; play previous</button> -->
+    <button style="color:#efefef; font-size: 22px" onclick="jQuery('#myPlayerID').playNext()">play next &#9755;</button>
+
+<br />
+<small>Give your friends brain orgasms:</small> <br />
+<div class="fb-like" data-href="http://binaural.co" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
+
+<br /><br />
+<small>Another fine <a href="http://4hourventure.com" target="_blank">4 hour venture</a>. <a href="http://4hourventure.com/imprint/" target="_blank" rel="nofollow">Imprint</a></small>
+</div>
+
+<a class="player" id="myPlayerID" >.</a>
+
+<!-- AddThis Smart Layers BEGIN -->
+<!-- Go to http://www.addthis.com/get/smart-layers to customize -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=dittes"></script>
+<script type="text/javascript">
+  addthis.layers({
+    'theme' : 'transparent',
+    'share' : {
+      'position' : 'right',
+      'numPreferredServices' : 6
+    }   
+  });
+</script>
+<!-- AddThis Smart Layers END -->
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-25943586-24', 'binaural.co');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+
+</html>
